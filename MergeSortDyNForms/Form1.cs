@@ -38,8 +38,8 @@ namespace MergeSortDyNForms
             foreach (int n in lista)
                 lbOriginal.Items.Add(n);
 
-            sorter.MoveCount = 0;
-            sorter.ComparisonCount = 0;
+           // sorter.MoveCount = 0;
+            //sorter.ComparisonCount = 0;
 
             Stopwatch t = new Stopwatch();
             t.Start();
@@ -57,8 +57,8 @@ namespace MergeSortDyNForms
             lblStats.Text =
                 $"Método usado: Merge Sort {modo.ToUpper()}\n" +
                 $"Tiempo: {t.Elapsed.TotalMilliseconds:F4} ms\n" +
-                $"Movimientos: {sorter.MoveCount}\n" +
-                $"Comparaciones: {sorter.ComparisonCount}\n" +
+              //  $"Movimientos: {sorter.MoveCount}\n" +
+            //    $"Comparaciones: {sorter.ComparisonCount}\n" +
                 $"Tamaño: {size}";
         }
 

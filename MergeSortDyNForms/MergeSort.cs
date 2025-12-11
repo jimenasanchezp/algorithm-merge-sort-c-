@@ -30,18 +30,18 @@ namespace MergeSortDyNForms     ///////////
             // 1. Comparar y escribir el menor en destino
             while (i < left.Count && j < right.Count)
             {
-                ComparisonCount++;  // contar comparación
+                //ComparisonCount++;  // contar comparación
 
                 if (left[i] < right[j])
                 {
                     myList[k] = left[i];
-                    MoveCount++;
+                    //MoveCount++;
                     i++;
                 }
                 else
                 {
                     myList[k] = right[j];
-                    MoveCount++;
+                    //MoveCount++;
                     j++;
                 }
 
@@ -52,7 +52,7 @@ namespace MergeSortDyNForms     ///////////
             while (i < left.Count)
             {
                 myList[k] = left[i];
-                MoveCount++;
+                //MoveCount++;
                 i++;
                 k++;
             }
@@ -61,7 +61,7 @@ namespace MergeSortDyNForms     ///////////
             while (j < right.Count)
             {
                 myList[k] = right[j];
-                MoveCount++;
+                //MoveCount++;
                 j++;
                 k++;
             }
@@ -151,7 +151,7 @@ namespace MergeSortDyNForms     ///////////
 
             for (int i = 1; i < myList.Count; i++)
             {
-                ComparisonCount++;
+               // ComparisonCount++;
 
                 if (myList[i] >= myList[i - 1])
                 {
