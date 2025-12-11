@@ -72,6 +72,11 @@ namespace MergeSortDyNForms
 
             return lista;
         }
+
+        private void topPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
 
