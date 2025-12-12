@@ -219,6 +219,7 @@
             this.Controls.Add(this.topPanel);
             this.Name = "Form1";
             this.Text = "Merge Sort Tester";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.topPanel.ResumeLayout(false);
             this.topPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSize)).EndInit();

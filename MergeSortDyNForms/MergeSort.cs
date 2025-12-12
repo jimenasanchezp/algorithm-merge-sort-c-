@@ -9,13 +9,13 @@ namespace MergeSortDyNForms     ///////////
     internal class MergeSort
     {
         // Contadores de operaciones
-        public int MoveCount { get; set; }
-        public int ComparisonCount { get; set; }
+        public int Divisiones { get; set; }
+        public int Mezclas { get; set; }
 
         public MergeSort()
         {
-            MoveCount = 0;
-            ComparisonCount = 0; 
+            Divisiones = 0;
+            Mezclas = 0; 
         }
 
         // =======================================================
@@ -23,6 +23,7 @@ namespace MergeSortDyNForms     ///////////
         // =======================================================
         public void Merge(List<int> myList, List<int> left, List<int> right)
         {
+            Mezclas ++;
             int i = 0; // índice izquierda
             int j = 0; // índice derecha
             int k = 0; // índice destino
@@ -75,6 +76,8 @@ namespace MergeSortDyNForms     ///////////
             if (myList.Count <= 1)
                 return;
 
+            Divisiones ++;
+
             int mid = myList.Count / 2;
 
             List<int> leftHalf = new List<int>(myList.GetRange(0, mid));
@@ -94,17 +97,24 @@ namespace MergeSortDyNForms     ///////////
         public void SortNatural(List<int> myList)
         {
             bool ordenado = false;
+            bool primeraVez = true;
 
             while (!ordenado)
             {
                 var runs = GetNaturalRuns(myList);
+
+                if (primeraVez)
+                {
+                    Divisiones = runs.Count;
+                    primeraVez = false;
+                }
 
                 // Si solo existe una secuencia ya está ordenado
                 if (runs.Count <= 1)
                 {
                     ordenado = true;
                     return;
-                }
+                }                
 
                 List<List<int>> nuevasSecuencias = new List<List<int>>();
 
@@ -151,7 +161,6 @@ namespace MergeSortDyNForms     ///////////
 
             for (int i = 1; i < myList.Count; i++)
             {
-               // ComparisonCount++;
 
                 if (myList[i] >= myList[i - 1])
                 {

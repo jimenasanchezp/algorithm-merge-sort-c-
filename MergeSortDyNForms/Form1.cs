@@ -57,8 +57,8 @@ namespace MergeSortDyNForms
             lblStats.Text =
                 $"Método usado: Merge Sort {modo.ToUpper()}\n" +
                 $"Tiempo: {t.Elapsed.TotalMilliseconds:F4} ms\n" +
-              //  $"Movimientos: {sorter.MoveCount}\n" +
-            //    $"Comparaciones: {sorter.ComparisonCount}\n" +
+                $"Divisiones: {sorter.Divisiones}\n" +
+               $"Mezclas: {sorter.Mezclas}\n" +
                 $"Tamaño: {size}";
         }
 
@@ -74,6 +74,11 @@ namespace MergeSortDyNForms
         }
 
         private void topPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
